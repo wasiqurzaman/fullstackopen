@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 import Filter from "./components/Filter";
 import PersonForm from "./components/PersonForm";
 import ShowPersons from "./components/ShowPersons";
-import axios from "axios";
 import personService from "./services/persons";
+import Notification from "./components/Notification";
 
 function App() {
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("success");
 
   useEffect(() => {
     console.log("effect");
@@ -63,6 +65,9 @@ function App() {
             );
             setNewName("");
             setNewNumber("");
+            setMessage(`Added ${returnedPerson.name}`);
+            setMessageType("success");
+            setTimeout(() => setMessage(""), 5000);
           });
       }
 
@@ -74,6 +79,9 @@ function App() {
       setPersons(persons.concat(returnedPerson));
       setNewName("");
       setNewNumber("");
+      setMessage(`Added ${returnedPerson.name}`);
+      setMessageType("success");
+      setTimeout(() => setMessage(""), 5000);
     });
   };
 
@@ -81,12 +89,24 @@ function App() {
     const personToDelete = persons.find((p) => p.id === id);
     const confirmation = window.confirm(`Delete ${personToDelete.name} ?`);
     if (confirmation) {
-      personService.deletePerson(id).then((returnedPerson) => {
-        console.log(returnedPerson);
-        setPersons(
-          persons.filter((person) => (person.id !== id ? true : false))
-        );
-      });
+      personService
+        .deletePerson(id)
+        .then((returnedPerson) => {
+          console.log(returnedPerson);
+          setPersons(
+            persons.filter((person) => (person.id !== id ? true : false))
+          );
+        })
+        .catch((error) => {
+          setMessage(
+            `Information of ${personToDelete.name} has already been removed from server.`
+          );
+          setTimeout(() => setMessage(""), 5000);
+          setMessageType("error");
+          setPersons(
+            persons.filter((person) => (person.id !== id ? true : false))
+          );
+        });
     }
   };
 
@@ -113,6 +133,7 @@ function App() {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={message} messageType={messageType} />
       <Filter
         searchQuery={searchQuery}
         handleSearchQueryChange={handleSearchQueryChange}
