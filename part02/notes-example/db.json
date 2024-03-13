@@ -22,67 +22,12 @@
     },
     {
       "id": "5",
-      "content": "cbcvbcvbvb",
-      "important": true
+      "content": "a new note...2",
+      "important": false
     },
     {
       "id": "6",
-      "content": "vcbvbvcbvcb",
-      "important": true
-    },
-    {
-      "id": "7",
-      "content": " vbcvbvcbcbcvbnb bvcv",
-      "important": false
-    },
-    {
-      "id": "8",
-      "content": "gdfhhghchn  ",
-      "important": true
-    },
-    {
-      "id": "9",
-      "content": "rtydhfjmf",
-      "important": false
-    },
-    {
-      "content": "a new note...dcngvb",
-      "important": false,
-      "id": "10"
-    },
-    {
-      "content": "dfgv",
-      "important": true,
-      "id": "11"
-    },
-    {
-      "content": "sdgfxcbv ",
-      "important": true,
-      "id": "12"
-    },
-    {
-      "content": "sfxvb ",
-      "important": false,
-      "id": "13"
-    },
-    {
-      "id": "14",
-      "content": "rstdhjfydfhc",
-      "important": false
-    },
-    {
-      "id": "15",
-      "content": "a new note...",
-      "important": false
-    },
-    {
-      "id": "17",
-      "content": "a new note...",
-      "important": true
-    },
-    {
-      "id": "18",
-      "content": "a new note...",
+      "content": "hello world",
       "important": false
     }
   ]

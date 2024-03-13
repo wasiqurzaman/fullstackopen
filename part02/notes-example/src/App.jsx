@@ -50,7 +50,7 @@ const App = () => {
 
   const toggleImportanceOf = (id) => {
     // console.log("importance of ", id, " needs to be toggled");
-    const url = `http://localhost:3001/notes/${id}`;
+    // const url = `http://localhost:3001/notes/${id}`;
     const note = notes.find((note) => note.id === id);
     const changedNote = { ...note, important: !note.important };
 
@@ -62,6 +62,25 @@ const App = () => {
       .catch((error) => {
         setErrorMessage(
           `Note '${note.content} was already removed from server'`
+        );
+        setTimeout(() => {
+          setErrorMessage(null);
+        }, 5000);
+        setNotes(notes.filter((n) => n.id !== id));
+      });
+  };
+
+  const deleteNote = (id) => {
+    const note = notes.find((note) => note.id === id);
+    noteService
+      .deleteNote(id)
+      .then((retuenedNote) => {
+        console.log(retuenedNote);
+        setNotes(notes.filter((note) => note.id !== id));
+      })
+      .catch((error) => {
+        setErrorMessage(
+          `Note '${note.content} is already removed from server'`
         );
         setTimeout(() => {
           setErrorMessage(null);
@@ -87,6 +106,7 @@ const App = () => {
             key={note.id}
             note={note}
             toggleImportance={() => toggleImportanceOf(note.id)}
+            handleDelete={() => deleteNote(note.id)}
           />
         ))}
       </ul>

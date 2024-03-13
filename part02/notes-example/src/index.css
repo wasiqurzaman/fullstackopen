@@ -30,3 +30,8 @@ button {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+.btn-delete {
+  color: red;
+  border: 2px solid red;
+}
