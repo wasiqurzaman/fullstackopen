@@ -1,0 +1,32 @@
+body {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.country-container {
+  border: 2px solid black;
+  padding: 10px;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form-container {
+  padding: 20px 10px;
+  border: 2px solid green;
+  width: 50%;
+}
+
+input {
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button {
+  font-family: monospace;
+  margin-left: 10px;
+  padding: 3px;
+  border: 2px solid green;
+  border-radius: 5px;
+  cursor: pointer;
+}
