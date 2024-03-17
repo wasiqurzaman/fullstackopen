@@ -5,3 +5,12 @@ Content-Type: application/json
   "name": "Wasiqur Zaman",
   "number": 65794165798464
 }
+
+###
+PUT http://localhost:3001/api/persons/65f7641aeca0d5192816c24d
+Content-Type: application/json
+
+{
+  "name": "Wasiqur Zaman",
+  "number": 040-65794165798464
+}
