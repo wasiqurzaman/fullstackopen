@@ -1,3 +1,4 @@
+/* eslint-disable @stylistic/js/indent */
 module.exports = {
 	env: {
 		node: true,
@@ -20,19 +21,19 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: "latest",
 	},
-	rules: {
-		eqeqeq: "error",
-		"no-trailing-spaces": "error",
+	"rules": {
+		"eqeqeq": "error",
+		"@stylistic/js/no-trailing-spaces": "error",
 		"object-curly-spacing": ["error", "always"],
 		"arrow-spacing": ["error", { before: true, after: true }],
 		"no-console": 0,
-		indent: [
+		"@stylistic/js/indent": [
 			"error",
 			2,
 			// 'tab'
 		],
-		"linebreak-style": ["error", "unix"],
-		quotes: ["error", "double"],
-		semi: ["error", "always"],
+		"@stylistic/js/linebreak-style": ["error", "unix"],
+		"@stylistic/js/quotes": ["error", "double"],
+		"@stylistic/js/semi": ["error", "always"],
 	},
 };
