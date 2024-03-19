@@ -36,10 +36,10 @@ module.exports = {
             "error",
             "double"
         ],
-        "@stylistic/js/semi": [
-            "error",
-            "always"
-        ],
+        // "@stylistic/js/semi": [
+        //     "error",
+        //     "always"
+        // ],
         "eqeqeq": "error",
         "no-trailing-spaces": "error",
         "object-curly-spacing": [
