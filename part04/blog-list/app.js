@@ -1,5 +1,6 @@
 const config = require("./utils/config");
 const express = require('express')
+require("express-async-errors");
 const app = express();
 const cors = require('cors')
 const mongoose = require('mongoose');
@@ -20,5 +21,7 @@ app.use(middleware.morgan(":method :url :status :response-time ms :getPostBody")
 app.use("/api/blogs", blogsRouter);
 
 app.use(middleware.unknownEndpoint);
+
+app.use(middleware.errorHanlder);
 
 module.exports = app;
