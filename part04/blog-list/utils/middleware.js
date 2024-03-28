@@ -1,7 +1,7 @@
 const morgan = require("morgan");
 
 morgan.token("getPostBody", function (req, res) {
-  if (req.method === "POST") return JSON.stringify(req.body);
+  if (req.method === "POST" || req.method === "PUT") return JSON.stringify(req.body);
 });
 
 const unknownEndpoint = (req, res, next) => {

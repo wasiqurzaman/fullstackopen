@@ -1,0 +1,9 @@
+PUT http://localhost:3001/api/blogs/660091a61c701ebb0ca731e1
+Content-Type: application/json
+
+{
+    "title": "Hey there. How are you?",
+    "author": "Wasiqur Zaman",
+    "url": "api/blogs/121",
+    "likes": 32
+}
