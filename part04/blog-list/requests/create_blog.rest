@@ -1,9 +1,10 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhc2lxdXIiLCJpZCI6IjY2MDljMDdkOWJlN2YyNmY0MWJiM2NhNiIsImlhdCI6MTcxMTkxNTE1Mn0.fxpOzlxsDKUSa-WtmlV91EON15imGCdGx_s25WLZ5fQ
 
 {
-    "title": "Hello World ",
-    "author": "Wasiqur Zaman",
-    "url": "api/blogs/121",
-    "likes": 16
+    "title": "Full Frontend Development Roadmap - 2024",
+    "author": "",
+    "url": "api/blogs/17571",
+    "likes": 121
 }
